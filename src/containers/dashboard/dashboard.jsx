@@ -53,22 +53,24 @@ class Dashboard extends Component {
     componentDidMount(){
         const userid = cookies.get('userid')
         const {user} = this.props
-        // if there's userid in cookie and there's not user data in redux
+        // if there's userid in cookie and there's no user data in redux
         if(!user._id && userid){
             this.props.getUser()
         }
     }
 
     render () {
+        const {user} = this.props
         const pathname = this.props.location.pathname
-        // check if user login (cookie id is exist)
-        const userid = cookies.get('userid')
-        if(!userid){
-            return <Redirect to='/login'/>
+        //check if user login (cookie id is exist)
+        // const userid = cookies.get('userid')
+        // console.log("dashboard cookie2:",userid)
+        if(!user._id){
+            return (<Redirect to='/login'/>)
         }
 
         // get user from the redux
-        const {user} = this.props
+        //const {user} = this.props
         if(!user._id){
             return null
         }else{

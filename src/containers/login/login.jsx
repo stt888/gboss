@@ -25,7 +25,7 @@ class Login extends Component {
         this.props.history.replace('/register')
     }
 
-    // handle register
+    // handle login
     handleLogin=()=>{
         this.props.login(this.state)
     }

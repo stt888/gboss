@@ -9,7 +9,7 @@ import Dashboard from './containers/dashboard/dashboard'
 import store from './redux/store'
 import './assets/css/index.css'
 
-import './ioTest/ioTest'
+//import './ioTest/ioTest'
 
 ReactDOM.render((
     <Provider store={store}>

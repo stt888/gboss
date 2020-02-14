@@ -18,7 +18,7 @@ export const resetUser = (msg) => ({type: RESET_USER, data: msg})
 // receive user list
 const receiveUserList = (users) => ({type: RECEIVE_USER_LIST, data: users}) 
 // receive one chat msg
-const receiveMsg = (chatMsg, userid)=>({type:RECEIVE_MSG, data: {chatMsg, userid}})
+const receiveMsg = ({chatMsg, userid})=>({type:RECEIVE_MSG, data: {chatMsg, userid}})
 // receive chat msg list
 const receiveMsgList = ({chatMsgs, users, userid})=>({type:RECEIVE_MSG_LIST, data: {chatMsgs, users, userid}})
 // get read msg information
@@ -29,11 +29,11 @@ const msgRead = ({from, to, count})=>({type:MSG_READ, data: {from, to, count}})
 function initIO(userid, dispatch){
    // debugger
     // connect to IO service
-    io.socket = io(`ws://localhost:3000?userid=${userid}`)
+    io.socket = io(`ws://secret-depths-83858.herokuapp.com/?userid=${userid}`)
     // binding listener to receive msg from server
     io.socket.on('receiveMsg', function(chatMsg){
         console.log('Browser received msg-me', chatMsg)
-        dispatch(receiveMsg(chatMsg, userid))
+        dispatch(receiveMsg({chatMsg, userid}))
     })
 }
 

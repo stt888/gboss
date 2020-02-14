@@ -56,7 +56,7 @@ function chat(state=initChat, action){
                 unReadCount: state.unReadCount + (!chatMsg.read && chatMsg.to===userid)
             }
         case RECEIVE_MSG_LIST:
-            var {users, chatMsgs, userid} = action.data
+            var {users, chatMsgs} = action.data
             return {
                 chatMsgs: chatMsgs,
                 users: users,

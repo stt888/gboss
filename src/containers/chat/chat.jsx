@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {NavBar, List, InputItem, Icon} from 'antd-mobile'
-import QueueAnim from 'rc-queue-anim'
+//import QueueAnim from 'rc-queue-anim'
 import {sendMsg, readMsg} from "../../redux/actions"
 
 const Item = List.Item
