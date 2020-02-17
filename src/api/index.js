@@ -2,7 +2,8 @@
 
 import ajax from './ajax'
 
-const proxyURL = "http://secret-depths-83858.herokuapp.com"
+//backend server URL
+const proxyURL = "https://secret-depths-83858.herokuapp.com"
 // request register
 export const reqRegister = (user) => ajax(`${proxyURL}/register`, user, 'POST')
 
