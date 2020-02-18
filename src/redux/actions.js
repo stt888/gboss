@@ -29,7 +29,7 @@ const msgRead = ({from, to, count})=>({type:MSG_READ, data: {from, to, count}})
 function initIO(userid, dispatch){
    // debugger
     // connect to IO service
-    io.socket = io(`ws://secret-depths-83858.herokuapp.com/?userid=${userid}`)
+    io.socket = io(`wss://secret-depths-83858.herokuapp.com/?userid=${userid}`)
     // binding listener to receive msg from server
     io.socket.on('receiveMsg', function(chatMsg){
         console.log('Browser received msg-me', chatMsg)
